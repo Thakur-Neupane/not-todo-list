@@ -85,4 +85,41 @@ const displayBadList = () => {
 </tr>`;
   });
 
-  
+  badElm.innerHTML = str;
+  // total bad hr calcuation
+
+  const badHrs = temArg.reduce((acc, item) => {
+    return acc + item.hr;
+  }, 0);
+  // show in the element
+  document.getElementById("badHrs").innerText = badHrs;
+};
+
+//[{task: "dd", hr:"88"}]
+
+const total = () => {
+  const ttl = taskList.reduce((acc, item) => {
+    return acc + item.hr;
+  }, 0);
+
+  document.getElementById("ttlHrs").innerText = ttl;
+  return ttl;
+};
+const handOnDelete = (id) => {
+  if (window.confirm("Are you sure, you want to delete the item?")) {
+    taskList = taskList.filter((item) => item.id !== id);
+    display();
+    total();
+  }
+};
+
+const switchTask = (id, type) => {
+  console.log(id, type);
+
+  taskList = taskList.map((item) => {
+    if (item.id === id) item.type = type;
+
+    return item;
+  });
+  display();
+};
