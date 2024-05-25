@@ -34,37 +34,35 @@
   </head>
   <body>
     <div class="wrapper pt-5">
-      <!-- Title -->
       <div class="container">
+        <!-- title  -->
         <h1 class="text-center">Not To Do List</h1>
 
         <!-- form  -->
-        <form action="" class="border p-5 rounded shadow-lg mt-5">
-          <div class="row g-2">
+        <form action="javascript:void(0)" onsubmit="handleOnSubmit(this)">
+          <div class="row g-2 mt-5 shadow-lg border p-5 rounded">
             <div class="col-md-7">
               <input
                 type="text"
                 class="form-control"
                 placeholder="Task"
-                aria-label="First name"
+                aria-label="Task"
+                id="task"
                 name="task"
+                required
               />
             </div>
             <div class="col-md-2">
               <input
+                name="hr"
                 type="number"
                 class="form-control"
-                placeholder="20"
-                aria-label="Last name"
-                name="hr"
+                placeholder="hours"
+                aria-label="hours"
+                required
                 min="1"
               />
             </div>
-            <div class="col-md-3 d-grid">
-              <button class="btn btn-primary">Add New Task</button>
-            </div>
-          </div>
-        </form>
         <!-- tables -->
 
         <!-- Entry list table  -->
